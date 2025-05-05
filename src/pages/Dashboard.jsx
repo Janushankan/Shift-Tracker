@@ -177,16 +177,84 @@ function Dashboard() {
   };
 
   useEffect(() => {
-    const fetchHistory = async () => {
-      try {
-        const res = await api.get("/shifts/history");
-        setShiftHistory(res.data);
-      } catch (err) {
-        console.error("Failed to fetch shift history:", err);
-      }
-    };
+    const mockData = [
+      {
+        date: "2025-05-01",
+        start: "09:00 AM",
+        end: "05:00 PM",
+        breakDuration: "1h 00m",
+        totalWorked: "7h 00m",
+      },
+      {
+        date: "2025-05-02",
+        start: "10:00 AM",
+        end: "06:30 PM",
+        breakDuration: "30m",
+        totalWorked: "8h 00m",
+      },
+      {
+        date: "2025-05-04",
+        start: "08:30 AM",
+        end: "04:30 PM",
+        breakDuration: "1h 15m",
+        totalWorked: "7h 45m",
+      },
+      {
+        date: "2025-05-01",
+        start: "09:00 AM",
+        end: "05:00 PM",
+        breakDuration: "1h 00m",
+        totalWorked: "7h 00m",
+      },
+      {
+        date: "2025-05-02",
+        start: "10:00 AM",
+        end: "06:30 PM",
+        breakDuration: "30m",
+        totalWorked: "8h 00m",
+      },
+      {
+        date: "2025-05-04",
+        start: "08:30 AM",
+        end: "04:30 PM",
+        breakDuration: "1h 15m",
+        totalWorked: "7h 45m",
+      },
+      {
+        date: "2025-05-01",
+        start: "09:00 AM",
+        end: "05:00 PM",
+        breakDuration: "1h 00m",
+        totalWorked: "7h 00m",
+      },
+      {
+        date: "2025-05-02",
+        start: "10:00 AM",
+        end: "06:30 PM",
+        breakDuration: "30m",
+        totalWorked: "8h 00m",
+      },
+      {
+        date: "2025-05-04",
+        start: "08:30 AM",
+        end: "04:30 PM",
+        breakDuration: "1h 15m",
+        totalWorked: "7h 45m",
+      },
+    ];
 
-    fetchHistory();
+    setShiftHistory(mockData);
+
+    // const fetchHistory = async () => {
+    //   try {
+    //     const res = await api.get("/shifts/history");
+    //     setShiftHistory(res.data);
+    //   } catch (err) {
+    //     console.error("Failed to fetch shift history:", err);
+    //   }
+    // };
+
+    // fetchHistory();
 
     // Restore status and timer if previously active
     const storedStatus = localStorage.getItem("shiftStatus");
@@ -324,9 +392,9 @@ function Dashboard() {
         {/* Shift History Table */}
         <div className="mt-10">
           <h2 className="text-2xl font-semibold mb-4">Shift History</h2>
-          <div className="w-full overflow-x-auto bg-white rounded-xl shadow-md">
-            <table className="min-w-full text-left border-collapse">
-              <thead className="bg-gray-50">
+          <div className="w-full max-h-[400px] overflow-y-auto overflow-x-auto bg-white rounded-xl shadow-md relative">
+            <table className="min-w-full text-left border-separate border-spacing-0">
+              <thead className="sticky top-0 bg-gray-50 z-10">
                 <tr>
                   <th className="p-4 text-sm font-semibold text-gray-600 min-w-[120px]">
                     Date
