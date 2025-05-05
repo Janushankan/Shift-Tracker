@@ -79,7 +79,7 @@ function Sidebar({ isSidebarOpen, toggleSidebar }) {
           )}
           <button
             onClick={handleToggleCollapse}
-            className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 p-1 rounded-full border border-gray-200 dark:border-gray-600 bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 focus:outline-none"
+            className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 p-1 rounded-full border border-gray-200 dark:border-gray-600 bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 focus:!outline-none"
           >
             {isCollapsed ? <FaChevronRight /> : <FaChevronLeft />}
           </button>
@@ -143,7 +143,7 @@ function Sidebar({ isSidebarOpen, toggleSidebar }) {
                 text-sm ${isCollapsed ? "text-xl" : "text-base font-medium"}
                 text-gray-700 dark:text-gray-300
                 hover:scale-[1.03] hover:!bg-yellow-100 dark:hover:!bg-yellow-800
-                hover:!text-yellow-600 dark:hover:!text-yellow-400
+                hover:!text-yellow-600 dark:hover:!text-yellow-400 focus:!outline-none
                 w-full
             `}
           >
